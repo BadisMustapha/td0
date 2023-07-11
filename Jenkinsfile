@@ -1,8 +1,6 @@
 pipeline{
 
-      agent { 
-    label 'linux'
-}
+      agent any
       tools {
            maven 'maven'
            jdk 'java-17'
@@ -22,7 +20,7 @@ pipeline{
         stage('Maven Build'){
 		 steps{
                       script{
-		    	                sh "mvn clean install"
+		    	                bat "mvn clean install"
                       	  }
                	     }  
             
