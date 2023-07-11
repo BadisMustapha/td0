@@ -9,11 +9,21 @@ pipeline{
       stages{
 
         stage('Clone Repo'){
-            git branch: 'main', url: 'https://github.com/Saleemullahpasha/tomcat-application.git'
+		 steps{
+                      script{
+		    	                 git branch: 'main', url: 'https://github.com/Saleemullahpasha/tomcat-application.git'
+                      	  }
+               	     }  
+           
         }
           
         stage('Maven Build'){
-            sh "mvn clean install"
+		 steps{
+                      script{
+		    	                sh "mvn clean install"
+                      	  }
+               	     }  
+            
         }
 		
        }	       	     	         
